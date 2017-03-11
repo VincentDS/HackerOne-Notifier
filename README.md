@@ -12,5 +12,5 @@ HackerOne-Notifier is a simple application which sends out a notification to you
 2. Create a new config file `config.py` similar to `config-example.py` with the preferred settings and yout Pushbullet API key.
 3. Install the requirements: `pip install -r requirements.txt`.
 4. Make the python script executable: `chmod +x hackerone-notifier.py`.
-5. Use no hangup to run the program in background: `nohup /path/to/hackerone-notifier.py &`.
+5. Use no hangup to run the program in background: `nohup python /path/to/hackerone-notifier.py &`.
 6. Preferably, put this in `/etc/rc.local` to launch the app at startup.
