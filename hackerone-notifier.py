@@ -46,7 +46,10 @@ def load_programs():
 def check_new_programs(old, new):
   return len(new) - len(old)
 
-def send_notification(program):
+def notificate_message(string):
+  pb.push_note(string, "")
+
+def notificate_program(program):
   text = program['name'] + " is now on HackerOne!"
   url = "https://hackerone.com" + program['url']
   pb.push_link(text, url)
@@ -58,7 +61,7 @@ def loop():
     amount_new = check_new_programs(old, new)
     if (amount_new > 0):
       for i in range(0, amount_new):
-        send_notification(new[i])
+        notificate_program(new[i])
     time.sleep(config.REFRESH_RATE)
 
 def main():
@@ -67,6 +70,7 @@ def main():
     programs = retrieve_programs()
     save_programs(programs)
 
+  notificate_message("HackerOne-Notifier started!")
   loop()
 
 main()
