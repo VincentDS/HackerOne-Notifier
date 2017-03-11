@@ -16,7 +16,7 @@ import time
 import os.path
 import config
 
-dump_file = "programs.dat"
+dump_file = os.path.dirname(os.path.realpath(__file__)) + "/programs.dat"
 pb = Pushbullet(config.PUSHBULLET_API_KEY)
 
 def create_url():
