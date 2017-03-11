@@ -62,6 +62,7 @@ def loop():
     if (amount_new > 0):
       for i in range(0, amount_new):
         notificate_program(new[i])
+      save_programs(new)
     time.sleep(config.REFRESH_RATE)
 
 def main():
