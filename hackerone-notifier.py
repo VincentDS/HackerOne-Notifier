@@ -53,7 +53,6 @@ def send_notification(program):
 
 def loop():
   while True:
-    print "Checking for new programs..."
     old = load_programs()
     new = retrieve_programs()
     amount_new = check_new_programs(old, new)
