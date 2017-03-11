@@ -53,10 +53,11 @@ def send_notification(program):
 
 def loop():
   while True:
+    print "Checking for new programs..."
     old = load_programs()
     new = retrieve_programs()
     amount_new = check_new_programs(old, new)
-    if (amount_new == 0):
+    if (amount_new > 0):
       for i in range(0, amount_new):
         send_notification(new[i])
     time.sleep(config.REFRESH_RATE)
@@ -66,7 +67,7 @@ def main():
   if not(os.path.isfile(dump_file)): 
     programs = retrieve_programs()
     save_programs(programs)
-    
+
   loop()
 
 main()
