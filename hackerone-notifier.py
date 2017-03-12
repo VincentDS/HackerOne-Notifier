@@ -66,7 +66,7 @@ def loop():
     time.sleep(config.REFRESH_RATE)
 
 def main():
-
+  
   if not(os.path.isfile(dump_file)): 
     programs = retrieve_programs()
     save_programs(programs)
@@ -74,4 +74,6 @@ def main():
   notificate_message("HackerOne-Notifier started!")
   loop()
 
-main()
+
+if __name__ == "__main__":
+  main()
